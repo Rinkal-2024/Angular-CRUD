@@ -31,7 +31,7 @@ export class EmpAddEditComponent {
       firstName: ['',[Validators.required , Validators.name]] ,
       lastName: ['',[Validators.required , Validators.name]],
       email: ['',[Validators.required , Validators.email]],
-      dob: ['',[Validators.required , Validators.dob]],
+      dob: ['',[Validators.required],
       gender: '',
       education: '',
       compony: '',

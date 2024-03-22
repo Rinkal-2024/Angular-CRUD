@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup ,Validators } from '@angular/forms';
 import { EmployeeService } from '../services/employee.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CoreService } from '../core/core.service';
@@ -28,10 +28,10 @@ export class EmpAddEditComponent {
     private _coreService: CoreService
   ) {
     this.empForm = this._fb.group({
-      firstName: '',
-      lastName: '',
-      email: '',
-      dob: '',
+      firstName: ['',[Validators.required , Validators.name]] ,
+      lastName: ['',[Validators.required , Validators.name]],
+      email: ['',[Validators.required , Validators.email]],
+      dob: ['',[Validators.required , Validators.dob]],
       gender: '',
       education: '',
       compony: '',
